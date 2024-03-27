@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcut icon" type="image" href="{% static "assets/img/favicon.ico" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/main.css" %}">
+    <script defer rel="script" type="application/javascript" src="{% static "assets/js/main.js" %}"></script>
+    <title>{% block title %} Index {% endblock %}</title>
+</head>
+<body>
+    {% include "header.htm" %}
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {% include "footer.htm" %}
+</body>
+</html>

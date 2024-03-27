@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def main(request):
-    return HttpResponse("Hi There !")
+    context = {'data': 'some text'}
+    return render(request, 'base/main.htm', context=context)
