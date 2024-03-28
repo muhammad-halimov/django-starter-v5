@@ -26,7 +26,7 @@ def login_page(request):
         try:
             models.User.objects.get(email=email)
         except BaseException:
-            messages.error(request, "Пароль или Почта неправльная")
+            messages.error(request, "Такой почты нету на сайте")
 
         user = authenticate(request, email=email, password=password)
 
@@ -35,7 +35,7 @@ def login_page(request):
             login(request, user)
             return redirect('main')
         except BaseException:
-            messages.error(request, "Просто неправильный ответ...")  # Don't touch it
+            messages.error(request, "Пароль либо почта неправильны")  # Don't touch it
 
     return render(request, 'base/login.htm')
 
