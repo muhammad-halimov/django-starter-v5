@@ -41,6 +41,9 @@ def login_page(request):
 
 
 def registration_page(request):
+    if request.user.is_authenticated:
+        return redirect('main')
+    
     form = forms.UserCreationForm
 
     if request.method == 'POST':
