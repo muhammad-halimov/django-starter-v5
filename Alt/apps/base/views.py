@@ -22,12 +22,6 @@ def login_page(request):
         email = request.POST.get('email').lower()
         password = request.POST.get('password')
 
-        # noinspection PyBroadException
-        try:
-            models.User.objects.get(email=email)
-        except BaseException:
-            messages.error(request, "Такой почты нету на сайте")
-
         user = authenticate(request, email=email, password=password)
 
         # noinspection PyBroadException
@@ -35,7 +29,7 @@ def login_page(request):
             login(request, user)
             return redirect('main')
         except BaseException:
-            messages.error(request, "Пароль либо почта неправильны")  # Don't touch it
+            messages.error(request, "Почта либо пароль неправильны")  # Don't touch it
 
     return render(request, 'base/login.htm')
 
@@ -55,8 +49,7 @@ def registration_page(request):
             login(request, user)
             return redirect('main')
         else:
-            messages.error(request, 'Возникла ошибка в процессе регистрации')
-            messages.error(request, 'Либо пароль слишком слабый')
+            messages.error(request, 'Ваш пароль является слабым, либо поля неправильны')
 
     context = {'form': form}
     return render(request, 'base/registration.htm', context)
