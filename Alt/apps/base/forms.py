@@ -15,5 +15,5 @@ class UserEditForm(ModelForm):
         model = models.User
         fields = ['username', 'email', 'login', 'avatar']
         widgets = {
-            'avatar': forms.FileInput(attrs={'accept': 'image/*,.png,.jpg', 'id': 'id_photo'}),
+            'avatar': forms.FileInput(attrs={'accept': 'image/*,.png,.jpg'}),
         }

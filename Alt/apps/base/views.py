@@ -28,7 +28,7 @@ def login_page(request):
             login(request, user)
             return redirect('main')
         except BaseException:
-            messages.error(request, "Почта либо пароль неправильны")  # Don't touch it
+            messages.error(request, "Почта либо пароль неправильны")
 
     return render(request, 'base/login.htm')
 
