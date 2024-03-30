@@ -10,6 +10,10 @@ class User(AbstractUser):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    DisplayFields = ['username', 'login', 'email', 'avatar', 'created', 'updated', 'id']
+    SearchableFields = ['id', 'username', 'login', 'email', 'avatar', 'created', 'updated']
+    FilterFields = ['created', 'updated']
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
