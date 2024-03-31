@@ -28,7 +28,7 @@ def login_page(request):
             login(request, user)
             return redirect('main')
         except BaseException:
-            messages.error(request, "Почта либо пароль неправильны")
+            messages.error(request, "Email or Adress is incorrect")
 
     return render(request, 'base/login.htm')
 
@@ -48,7 +48,7 @@ def registration_page(request):
             login(request, user)
             return redirect('main')
         else:
-            messages.error(request, 'Ваш пароль является слабым, либо поля неправильны')
+            messages.error(request, "Your password is weak or Fields are filled incorrectly")
 
     context = {'form': form}
     return render(request, 'base/registration.htm', context)
