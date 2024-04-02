@@ -28,7 +28,7 @@ def login_page(request):
             login(request, user)
             return redirect('main')
         except BaseException:
-            messages.error(request, "Email or Adress is incorrect")
+            messages.error(request, "Email adress or password is incorrect")
 
     return render(request, 'base/login.htm')
 
