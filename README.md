@@ -1,4 +1,4 @@
-# Django Starter V5
+# Zero-Complex Weather App
 
 # Installing & Running
 - Install python
@@ -12,14 +12,15 @@ pip - Windows NT
 ```
 python -m venv venv
 ```
-- Activate virtual environment (venv):
+- Activate virtual environment (venv) - Windows:
 ```
-venv/Scripts/activate - Windows 
+venv/Scripts/activate
 ```
+- Activate virtual environment (venv) - Linux / GNU / BSD / Unix / macOS:
 ```
-source venv/bin/activate - GNU/Linux & macOS/BSD
+source venv/bin/activate
 ```
-- Followed by instuctions:
+- Follow instuctions:
 ```
 pip install -r requirements.txt
 ```
@@ -32,15 +33,16 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
+- To stop server
 ```
-CTRL + C - To stop server
+CTRL + C
 ```
 
 ## License
 
 Licensed under:
 
-* GPL3 license (https://www.gnu.org/licenses/gpl-3.0.en.html)
+* MIT license (https://opensource.org/license/mit)
 
 ## Targeted OS
 
